@@ -1,0 +1,36 @@
+.wrapper{
+  display: flex;
+  align-items: center;
+}
+
+.product-container {
+  width: 20em;
+  height: 2em;
+  display: flex;
+  color: #000;
+  border: 1px solid #686868;
+  align-items: center;
+  padding: 0 1em;
+  border-radius: 5px;
+  justify-content: space-between;
+  margin: 3px 0;
+}
+
+.product-remove {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.product-name{
+  width: 200px;
+}
+
+.product-qty{
+  width: 50px;
+  text-align: center;
+}
+
+.product-price{
+  width: 150px;
+  text-align: right;
+}
