@@ -3,9 +3,19 @@ const { Schema } = mongoose;
 
 const ProductSchema = new Schema(
   {
-    name: String,
-    qty: Number,
-    price: Number
+    name: {
+      type: String,
+      required: true,
+      unique: true
+    },
+    qty: {
+      type: Number,
+      required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+    }
   }
 );
 

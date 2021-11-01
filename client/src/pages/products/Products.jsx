@@ -61,7 +61,7 @@ function Products() {
         <input type="text" name="qty" placeholder="Insert quantity" onChange={handleChange} />
         <label htmlFor="price">Price</label>
         <input type="text" name="price" placeholder="Insert price" onChange={handleChange} />
-        <button type="submit">Add</button>
+        <button type="submit" disabled={!formData.name || !formData.qty || !formData.price} >Add</button>
       </form>
     </div>
   );
