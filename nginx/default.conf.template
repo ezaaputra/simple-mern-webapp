@@ -1,0 +1,26 @@
+# Frontend
+server {
+    listen 80;
+    listen [::]:80;
+    server_name eza.my.id www.eza.my.id;
+    if ($http_x_forwarded_proto = "http") {
+        return 301 https://$server_name$request_uri;
+    }
+    location / {
+        root /var/www/mern-webapp;
+        index index.html index.htm;
+        try_files $uri $uri/ /index.html;
+    }
+}
+# Backend
+server {
+    listen 80;
+    listen [::]:80;
+    server_name api.eza.my.id;
+    if ($http_x_forwarded_proto = "http") {
+        return 301 https://$server_name$request_uri;
+    }
+    location / {
+        proxy_pass http://127.0.0.1:3001; # Backend
+    }
+}
